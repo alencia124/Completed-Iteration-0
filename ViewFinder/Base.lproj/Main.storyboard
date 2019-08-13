@@ -46,19 +46,18 @@
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="RSv-hK-d5P" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="219" y="135"/>
+            <point key="canvasLocation" x="-551" y="-13"/>
         </scene>
         <!--Add New Photo-->
         <scene sceneID="utI-mD-YZD">
             <objects>
-                <viewController id="ads-13-vp6" sceneMemberID="viewController">
+                <viewController id="ads-13-vp6" customClass="AddPhotoViewController" customModule="ViewFinder" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="Hr5-oS-EjP">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Wvn-aE-slc">
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Wvn-aE-slc">
                                 <rect key="frame" x="139" y="463" width="137" height="35"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="19"/>
                                 <state key="normal" title="Save This Photo"/>
                             </button>
@@ -67,33 +66,54 @@
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="20"/>
                                 <state key="normal" title="Camera"/>
+                                <connections>
+                                    <action selector="Camera:" destination="ads-13-vp6" eventType="touchUpInside" id="fXc-oh-YSz"/>
+                                    <action selector="camera:" destination="ads-13-vp6" eventType="touchUpInside" id="jYg-YS-MBf"/>
+                                </connections>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="0xO-Bh-5FT">
                                 <rect key="frame" x="271" y="574" width="66" height="36"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="20"/>
                                 <state key="normal" title="Albums"/>
+                                <connections>
+                                    <action selector="Albums:" destination="ads-13-vp6" eventType="touchUpInside" id="gyg-fT-QBw"/>
+                                </connections>
                             </button>
-                            <textField opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="9AT-kU-6YT">
+                            <textField opaque="NO" contentMode="scaleToFill" misplaced="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="9AT-kU-6YT">
                                 <rect key="frame" x="94" y="402" width="227" height="30"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <nil key="textColor"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                 <textInputTraits key="textInputTraits"/>
                             </textField>
-                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="710a_hand_with_camera_720x" translatesAutoresizingMaskIntoConstraints="NO" id="BPY-8c-e6G">
+                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="710a_hand_with_camera_720x" translatesAutoresizingMaskIntoConstraints="NO" id="BPY-8c-e6G">
                                 <rect key="frame" x="87" y="173" width="240" height="128"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="128" id="Nbm-TD-C8e"/>
+                                    <constraint firstAttribute="width" constant="240" id="aRK-Z9-2hW"/>
+                                </constraints>
                             </imageView>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <constraints>
+                            <constraint firstItem="9AT-kU-6YT" firstAttribute="leading" secondItem="tnE-5m-90o" secondAttribute="leading" constant="94" id="81e-P9-8Jf"/>
+                            <constraint firstItem="9AT-kU-6YT" firstAttribute="top" secondItem="Hr5-oS-EjP" secondAttribute="top" constant="402" id="FxD-At-aZ6"/>
+                            <constraint firstItem="Wvn-aE-slc" firstAttribute="top" secondItem="9AT-kU-6YT" secondAttribute="bottom" constant="31" id="SmC-CC-Qwa"/>
+                            <constraint firstItem="BPY-8c-e6G" firstAttribute="centerX" secondItem="9AT-kU-6YT" secondAttribute="centerX" id="Uls-bf-mbN"/>
+                            <constraint firstItem="BPY-8c-e6G" firstAttribute="top" secondItem="tnE-5m-90o" secondAttribute="top" constant="85" id="b7X-9J-eJ3"/>
+                            <constraint firstItem="BPY-8c-e6G" firstAttribute="centerX" secondItem="Wvn-aE-slc" secondAttribute="centerX" id="gI0-D1-Hgb"/>
+                            <constraint firstItem="BPY-8c-e6G" firstAttribute="centerX" secondItem="Hr5-oS-EjP" secondAttribute="centerX" id="kkI-Bz-nwC"/>
+                        </constraints>
                         <viewLayoutGuide key="safeArea" id="tnE-5m-90o"/>
                     </view>
                     <navigationItem key="navigationItem" title="Add New Photo" id="TJ0-Na-cYr"/>
+                    <connections>
+                        <outlet property="displayImage" destination="BPY-8c-e6G" id="T5b-nC-o4w"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="4mq-UI-EVK" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1205.7971014492755" y="134.59821428571428"/>
+            <point key="canvasLocation" x="388" y="-13"/>
         </scene>
         <!--Navigation Controller-->
         <scene sceneID="Vu8-gw-1Nl">
@@ -111,7 +131,7 @@
                 </navigationController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Rrs-4I-HQm" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="-642" y="135"/>
+            <point key="canvasLocation" x="-1578" y="-13"/>
         </scene>
     </scenes>
     <resources>
